@@ -9,6 +9,7 @@ public class CustomSounds {
     private CustomSounds() {}
 
     public static final SoundEvent ARROW_WHOOSH = registerSound("arrow_whoosh");
+    public static final SoundEvent FIREBALL_FLY = registerSound("fireball_fly");
 
     private static SoundEvent registerSound(String id) {
         Identifier identifier = Identifier.of(Whoosh.MOD_ID, id);

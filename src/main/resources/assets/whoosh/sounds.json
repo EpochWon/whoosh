@@ -4,5 +4,11 @@
     "sounds": [
       "whoosh:arrow_whoosh"
     ]
+  },
+  "fireball_fly": {
+    "subtitle": "sound.whoosh.fireball_fly",
+    "sounds": [
+      "whoosh:fireball_fly"
+    ]
   }
 }
