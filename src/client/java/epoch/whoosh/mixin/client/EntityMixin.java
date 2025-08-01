@@ -1,6 +1,7 @@
 package epoch.whoosh.mixin.client;
 
 import epoch.whoosh.CustomSounds;
+import epoch.whoosh.PlayerWindSoundInstance;
 import epoch.whoosh.WhooshSoundInstance;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.SoundInstance;
@@ -27,15 +28,15 @@ public class EntityMixin {
 				SoundCategory.NEUTRAL,
 				0.0f,
 				1.5f,
-				SoundInstance.AttenuationType.LINEAR
+				SoundInstance.AttenuationType.LINEAR,
+				10
 		);
-		WhooshSoundInstance playerWhooshInstance = new WhooshSoundInstance(
+		PlayerWindSoundInstance PlayerWindSoundInstance = new PlayerWindSoundInstance(
 				entity,
 				CustomSounds.ARROW_WHOOSH,
 				SoundCategory.NEUTRAL,
 				0.0f,
-				1.5f,
-				SoundInstance.AttenuationType.NONE
+				1.5f
 		);
 		WhooshSoundInstance fireballFlyInstance = new WhooshSoundInstance(
 				entity,
@@ -43,7 +44,8 @@ public class EntityMixin {
 				SoundCategory.NEUTRAL,
 				0.0f,
 				1.0f,
-				SoundInstance.AttenuationType.LINEAR
+				SoundInstance.AttenuationType.LINEAR,
+				5
 		);
 
 		if (entity instanceof ProjectileEntity && !(entity instanceof FireballEntity || entity instanceof SmallFireballEntity)) {
@@ -55,7 +57,7 @@ public class EntityMixin {
 		}
 
 		if (entity == client.player) {
-			client.getSoundManager().play(playerWhooshInstance);
+			client.getSoundManager().play(PlayerWindSoundInstance);
 		}
 	}
 }
