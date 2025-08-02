@@ -48,16 +48,13 @@ public class EntityMixin {
 				5
 		);
 
-		if (entity instanceof ProjectileEntity && !(entity instanceof FireballEntity || entity instanceof SmallFireballEntity)) {
+		if (entity instanceof FireballEntity || entity instanceof SmallFireballEntity) {
+			client.getSoundManager().play(fireballFlyInstance);
+		} else if (entity == client.player) {
+			client.getSoundManager().play(PlayerWindSoundInstance);
+		} else if (entity instanceof ProjectileEntity) {
 			client.getSoundManager().play(whooshInstance);
 		}
 
-		if (entity instanceof FireballEntity || entity instanceof SmallFireballEntity) {
-			client.getSoundManager().play(fireballFlyInstance);
-		}
-
-		if (entity == client.player) {
-			client.getSoundManager().play(PlayerWindSoundInstance);
-		}
 	}
 }
