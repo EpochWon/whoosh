@@ -3,15 +3,15 @@
 	"id": "whoosh",
 	"version": "${version}",
 	"name": "Whoosh!",
-	"description": "Adds a whoosh flyby sound to arrows",
+	"description": "Adds sounds to flying projectiles and player wind when moving fast enough.",
 	"authors": [
 		"Epoch"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/EpochWon/whoosh"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL",
 	"icon": "assets/whoosh/icon.png",
 	"environment": "*",
 	"entrypoints": {
