@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"epoch.whoosh.WhooshClient"
+		],
+		"modmenu": [
+			"epoch.whoosh.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
