@@ -10,5 +10,17 @@
     "sounds": [
       "whoosh:fireball_fly"
     ]
+  },
+  "firework_fly": {
+    "subtitle": "sound.whoosh.firework_fly",
+    "sounds": [
+      "whoosh:firework_fly"
+    ]
+  },
+  "firework_whistle": {
+    "subtitle": "sound.whoosh.firework_whistle",
+    "sounds": [
+      "whoosh:firework_whistle"
+    ]
   }
 }

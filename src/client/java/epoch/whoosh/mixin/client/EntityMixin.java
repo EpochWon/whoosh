@@ -1,13 +1,12 @@
 package epoch.whoosh.mixin.client;
 
-import epoch.whoosh.CustomSounds;
-import epoch.whoosh.PlayerWindSoundInstance;
-import epoch.whoosh.WhooshSoundInstance;
+import epoch.whoosh.*;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.FireballEntity;
+import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.SmallFireballEntity;
 import net.minecraft.sound.SoundCategory;
@@ -47,12 +46,32 @@ public class EntityMixin {
 				SoundInstance.AttenuationType.LINEAR,
 				5
 		);
+		FireworkFlySoundInstance fireworkFlyInstance = new FireworkFlySoundInstance(
+				entity,
+				CustomSounds.FIREWORK_FLY,
+				SoundCategory.NEUTRAL,
+				0.0f,
+				10
+		);
+		FireworkWhistleSoundInstance fireworkWhistleInstance = new FireworkWhistleSoundInstance(
+				entity,
+				CustomSounds.FIREWORK_WHISTLE,
+				SoundCategory.NEUTRAL,
+				0.0f,
+				10
+		);
 
 		if (entity instanceof FireballEntity || entity instanceof SmallFireballEntity) {
 			client.getSoundManager().play(fireballFlyInstance);
-		} else if (entity == client.player) {
+		}
+		else if (entity == client.player) {
 			client.getSoundManager().play(PlayerWindSoundInstance);
-		} else if (entity instanceof ProjectileEntity) {
+		}
+		else if (entity instanceof FireworkRocketEntity) {
+			client.getSoundManager().play(fireworkFlyInstance);
+			client.getSoundManager().play(fireworkWhistleInstance);
+		}
+		else if (entity instanceof ProjectileEntity) {
 			client.getSoundManager().play(whooshInstance);
 		}
 

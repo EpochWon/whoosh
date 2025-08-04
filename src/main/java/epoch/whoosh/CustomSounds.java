@@ -10,6 +10,8 @@ public class CustomSounds {
 
     public static final SoundEvent ARROW_WHOOSH = registerSound("arrow_whoosh");
     public static final SoundEvent FIREBALL_FLY = registerSound("fireball_fly");
+    public static final SoundEvent FIREWORK_FLY = registerSound("firework_fly");
+    public static final SoundEvent FIREWORK_WHISTLE = registerSound("firework_whistle");
 
     private static SoundEvent registerSound(String id) {
         Identifier identifier = Identifier.of(Whoosh.MOD_ID, id);
