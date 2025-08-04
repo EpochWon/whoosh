@@ -21,7 +21,7 @@ public class FireworkWhistleSoundInstance extends MovingSoundInstance {
         this.pitch = 0.9F + (random.nextFloat() * 0.3F);
         this.repeat = true;
         this.setPositionToEntity();
-        this.attenuationType = AttenuationType.LINEAR;
+        this.attenuationType = AttenuationType.NONE;
         this.fadeInTicks = fadeInTicks;
     }
 
@@ -36,8 +36,7 @@ public class FireworkWhistleSoundInstance extends MovingSoundInstance {
 
         velocity = (float) entity.getVelocity().lengthSquared();
 
-        //this.volume = Math.min(10.0F, velocity);
-        this.volume = 50.F;
+        this.volume = Math.min(50.0F, velocity * 10.F);
         if (entity.isInFluid()) {
             this.volume = 0F;
         }

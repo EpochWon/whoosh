@@ -58,7 +58,7 @@ public class EntityMixin {
 				CustomSounds.FIREWORK_WHISTLE,
 				SoundCategory.NEUTRAL,
 				0.0f,
-				10
+				60
 		);
 
 		if (entity instanceof FireballEntity || entity instanceof SmallFireballEntity) {
@@ -69,7 +69,7 @@ public class EntityMixin {
 		}
 		else if (entity instanceof FireworkRocketEntity) {
 			client.getSoundManager().play(fireworkFlyInstance);
-			client.getSoundManager().play(fireworkWhistleInstance);
+			//client.getSoundManager().play(fireworkWhistleInstance);
 		}
 		else if (entity instanceof ProjectileEntity) {
 			client.getSoundManager().play(whooshInstance);
